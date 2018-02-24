@@ -10,7 +10,9 @@ img.resize {
     padding-bottom: 10px;
 }
 
-.biography {}
+.biography {
+    margin-left: 40px;
+}
 
 .footer {
     position: fixed;
