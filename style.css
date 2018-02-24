@@ -53,7 +53,7 @@ h3 {
     color: #ff9f1a;
 }
 
-div > h3 {
+.languages > h3 {
     margin-left: 80px;
     color: white;
 }
