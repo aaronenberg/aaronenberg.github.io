@@ -48,6 +48,6 @@ h3 {
     color: #ff9f1a;
 }
 
-p, p h3, p h2, table {
+p, p > h3, p > h2, table {
     padding-left: 40px;
 }
