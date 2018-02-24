@@ -1,0 +1,50 @@
+img.resize {
+    width:240px;
+    height: auto;
+    border-radius: 50%;
+    padding-bottom: 10px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e17055;
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+
+table, th, tr, td {
+    border: 1px  solid black;
+    border-collapse: collapse;
+    padding-right: 120px;
+    padding-left: 10px;
+}
+
+#html {
+#    background: url("source.gif") no-repeat center fixed ;
+#    background-size: cover;
+#}
+
+body, html{
+    color: #ffaf40;
+    background-color: black;
+    margin: 0;
+    opacity: 0.95;
+}
+
+h1 {
+    padding-top: 10px;
+}
+
+h3 {
+    padding-left: 10px;
+    color: #ff9f1a;
+}
+
+p, table {
+    padding-left: 20px;
+}
