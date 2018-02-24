@@ -1,7 +1,7 @@
 .container {}
 .header {
     text-align: center;
-    padding: 30px;
+    padding: 18px;
 }
 img.resize {
     width:240px;
@@ -21,7 +21,7 @@ img.resize {
     color: white;
     font-size: 13px;
     font-style: italic;
-    padding: 20px;
+    padding: 12px;
     text-align: center;
 }
 
