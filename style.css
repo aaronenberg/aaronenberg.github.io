@@ -35,6 +35,8 @@ body, html{
     margin: 0;
     opacity: 0.95;
     font-family: 'Inconsolata', serif;
+    margin-bottom: 100px;
+    clear: both;
 }
 
 h1 {
