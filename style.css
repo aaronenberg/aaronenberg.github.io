@@ -11,8 +11,28 @@ img.resize {
     margin-bottom: 10px;
 }
 
-p.biography {
-    margin-left: 10px;
+.biography h3 {
+    margin-left: 20px;
+}
+.biography p {
+    margin-left: 40px;
+}
+
+.csc h2 {
+    margin-left: 20px;
+}
+.csc h3 {
+    margin-left: 40px;
+}
+.csc ul {
+    margin-left: 60px;
+}
+
+.sources h2 {
+    margin-left: 20px;
+}
+.sources ul {
+    margin-left: 40px;
 }
 
 .footer {
