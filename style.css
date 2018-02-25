@@ -42,7 +42,7 @@ img.resize {
 }
 
 div.sources {
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 table, th, tr, td {
@@ -57,7 +57,7 @@ body, html{
     margin: 0;
     opacity: 0.95;
     font-family: 'Inconsolata', serif;
-    margin-bottom: 444444440px;
+    margin-bottom: 40px;
     clear: both;
 }
 
