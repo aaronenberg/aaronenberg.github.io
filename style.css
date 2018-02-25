@@ -27,11 +27,11 @@ img.resize {
 }
 .csc h5 {
     margin-left: 60px;
-    max-width: 65ch;
 }
 
 .definition + p {
     margin-left: 80px;
+    max-width: 65ch;
 }
 
 .sources h2 {
