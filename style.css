@@ -25,12 +25,12 @@ img.resize {
 .csc h3 {
     margin-left: 40px;
 }
-
-.assignment h5 {
+.csc h5 {
     margin-left: 60px;
+    max-width: 65ch;
 }
 
-.definition p {
+.definition + p {
     margin-left: 80px;
 }
 
