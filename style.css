@@ -25,9 +25,13 @@ img.resize {
 .csc h3 {
     margin-left: 40px;
 }
-.csc ul {
+
+.assignment h5 {
     margin-left: 60px;
-    max-width: 75ch;
+}
+
+.definition p {
+    margin-left: 80px;
 }
 
 .sources h2 {
