@@ -27,6 +27,7 @@ img.resize {
 }
 .csc ul {
     margin-left: 60px;
+    max-width: 75ch;
 }
 
 .sources h2 {
