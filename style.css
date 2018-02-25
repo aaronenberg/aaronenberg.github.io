@@ -16,6 +16,7 @@ img.resize {
 }
 .biography p {
     margin-left: 40px;
+    max-width: 75ch;
 }
 
 .csc h2 {
