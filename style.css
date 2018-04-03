@@ -19,6 +19,10 @@ img.resize {
     max-width: 75ch;
 }
 
+.csc p {
+    margin-left: 40px;
+    max-width: 75ch;
+}
 .csc h2 {
     margin-left: 20px;
 }
