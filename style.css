@@ -33,10 +33,12 @@ img.resize {
     margin-left: 60px;
 }
 
-input {
+#input {
     margin-left: 80px;
 }
-
+#button {
+    margin-left: 10px;
+}
 #output {
     margin-left: 80px;
 }
