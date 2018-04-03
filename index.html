@@ -71,6 +71,7 @@
                 Your end of string variable will be dollar sign ($).<br>
                 When you click on 'submit', it will check whether entered string is valid or not for a given grammar. <br>
             </p>
+		<h2>Input</h2>
 			<form id="inputForm" action="#">
                 Input: <input type="text" name="name" id="input" />
                 <input type="button" name="submit" value="Submit" onclick="recursiveDescentParser();" />
@@ -99,7 +100,7 @@
                 var token = input.split("");
                 expression(token);
                 if(token[1] != null || token[0] != "$"  ){
-                    errorResponse();
+                    throwInputError();
                 }
             }
             function expression(token)
@@ -151,7 +152,7 @@
                     token = match("3",token);                    
                 }
                 else{
-                    errorResponse();
+                    throwInputError();
                 }
                     
             }
@@ -161,7 +162,7 @@
                 if(token[0] == x){
                     return getNextToken(token);
                 }else{
-                    errorResponse();
+                    throwInputError();
                 }
             }
             function getNextToken(token)
@@ -172,20 +173,20 @@
                 }
                 return token;
             }
-            function errorResponse()
+            function throwInputError()
             {
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "Errors found in the input stream "+input+" ";
+                    "The input "+input+" is an invalid String";
                 exit();
             }
-            function legalResponse()
+            function legal()
             {
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "The input stream "+input+" is legal";
+                    "The input "+input+" is a valid String";
             }
             </script>
       </div>
