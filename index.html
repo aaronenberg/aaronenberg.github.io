@@ -50,9 +50,8 @@
             <div class="csc">
                 <h2>CSc 135</h2>
 
-	<h2>Recursive Descent Parser</h2>
+	<h2>Recursive Descent Recognizer</h2>
             <p>
-                bep
                 Grammar for Arithmetic Expression
                 <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM
@@ -84,7 +83,8 @@
             </p>
 			<form id="inputForm" action="#">
                 <input type="text" name="name" id="input" />
-                <input type="button" name="submit" value="Submit" onclick="recursiveDescentRecognizer();" />
+                <input type="button" name="submit" id="button" value="Recognize" 
+                 onclick="recursiveDescentRecognizer();" />
             </form>
             <br>
             <p id="output"></p>
