@@ -54,6 +54,7 @@
       <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
+            boop
                 Grammar for Arithmatic Expression <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM <br>
                 TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR <br>
@@ -176,16 +177,14 @@
             {
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = 
-                    "Errors found in the input stream "+input+";
+                document.getElementById("output").innerHTML = "Errors found in the input stream "+input+";
                 exit();
             }
             function legal() 
             {
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = 
-                    "The input stream "+input+" is legal.";
+                document.getElementById("output").innerHTML = "The input stream "+input+" is legal.";
             }
             </script>
       </div>
