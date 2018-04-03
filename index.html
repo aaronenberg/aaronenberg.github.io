@@ -54,7 +54,7 @@
       <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
-                boop
+                beep
                 Grammar for Arithmatic Expression <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM <br>
                 TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR <br>
@@ -92,17 +92,19 @@
             written in something different then many student have been learning. </p>
             <script>
 
- function recursiveDescentParser(){
+            function recursiveDescentParser()
+            {
                 var x = document.getElementById("input");
                 var input = x.value;
                 input = input.trim();
                 var token = input.split("");
                 expression(token);
                 if(token[1] != null || token[0] != "$"  ){
-                    throwInputError();
+                    errorResponse();
                 }
             }
-            function expression(token){
+            function expression(token)
+            {
                 term(token);
                 while(token[0] == "+" || token[0] == "-"){
                     if(token[0] == "+"){
@@ -115,20 +117,22 @@
                     }
                 }
             }
-            function term(token){
-                parseF(token);
+            function term(token)
+            {
+                factor(token);
                 while(token[0] == "*" || token[0] == "/"){
                     if(token[0] =="*"){
                         token = match("*",token)
-                        parseF(token);
+                        factor(token);
                     }
                     if(token[0] =="/"){
                         token = match("/",token)
-                        parseF(token);
+                        factor(token);
                     }
                 }
             }
-            function parseF(token){
+            function factor(token)
+            {
                 if(token[0] =="("){
                     token = match("(",token);
                     expression(token);
@@ -148,37 +152,41 @@
                     token = match("3",token);                    
                 }
                 else{
-                    throwInputError();
+                    errorResponse();
                 }
                     
             }
             
-            function match(x,token){
+            function match(x,token)
+            {
                 if(token[0] == x){
                     return getNextToken(token);
                 }else{
-                    throwInputError();
+                    errorResponse();
                 }
             }
-            function getNextToken(token){
+            function getNextToken(token)
+            {
                 token.shift();
                 if(token[0] == "$"){
                     legal();
                 }
                 return token;
             }
-            function throwInputError(){
+            function errorResponse()
+            {
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "The input "+input+" is an invalid String";
+                    "Errors found in the input stream "+input+" ";
                 exit();
             }
-            function legal(){
+            function legalResponse()
+            {
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "The input "+input+" is a valid String";
+                    "The input stream "+input+" is legal";
             }
             </script>
       </div>
