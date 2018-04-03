@@ -74,7 +74,7 @@
 		<h2>Input</h2>
 			<form id="inputForm" action="#">
                 Input: <input type="text" name="name" id="input" />
-                <input type="button" name="submit" value="Submit" onclick="parser();" />
+                <input type="button" name="submit" value="Submit" onclick="recursiveDescentParser();" />
             </form>
             <br>
             <p id="output"></p>
@@ -86,36 +86,36 @@
             was depreciated and using the object tag was difficult for me to implement. When attempting 
             to use the Applet of Object tag it would require java to be installed and ask the user to run 
             the application. In Chrome it would not run because the java plugin was discontinued. To insure
-            compatibility across all systems I decided to rewrite the parser in JavaScript. I found the w3 
+            compatibility across all systems I decided to rewrite the recursiveDescentParser in JavaScript. I found the w3 
             school JavaScript and html tutorial very useful when it came to looking up how to implement 
             specific commands. If I had one suggestion it would be to start early, since this is typically 
             written in something different then many student have been learning. </p>
             <script>
 
- function parser(){
+ function recursiveDescentParser(){
                 var x = document.getElementById("input");
                 var input = x.value;
                 input = input.trim();
                 var token = input.split("");
-                parseE(token);
+                expression(token);
                 if(token[1] != null || token[0] != "$"  ){
-                    error();
+                    throwInputError();
                 }
             }
-            function parseE(token){
-                parseT(token);
+            function expression(token){
+                term(token);
                 while(token[0] == "+" || token[0] == "-"){
                     if(token[0] == "+"){
                         token = match("+",token)
-                        parseT(token);
+                        term(token);
                     }
                     if(token[0] =="-"){
                         token = match("-",token)
-                        parseT(token);
+                        term(token);
                     }
                 }
             }
-            function parseT(token){
+            function term(token){
                 parseF(token);
                 while(token[0] == "*" || token[0] == "/"){
                     if(token[0] =="*"){
@@ -131,7 +131,7 @@
             function parseF(token){
                 if(token[0] =="("){
                     token = match("(",token);
-                    parseE(token);
+                    expression(token);
                     
                         token = match(")",token);
                 }
@@ -149,26 +149,26 @@
                         token = match("3",token);                    
                     }
                 }else{
-                    error();
+                    throwInputError();
                 }
                     
             }
             
             function match(x,token){
                 if(token[0] == x){
-                    return nextToken(token);
+                    return getNextToken(token);
                 }else{
-                    error();
+                    throwInputError();
                 }
             }
-            function nextToken(token){
+            function getNextToken(token){
                 token.shift();
                 if(token[0] == "$"){
                     legal();
                 }
                 return token;
             }
-            function error(){
+            function throwInputError(){
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
@@ -214,7 +214,7 @@
                     - Parsing, or syntax analysis, is a way of describing the structure of
                     a sentence through its grammatical derivation (Linz).
                     <br>
-                    - A parser is a software component that takes input data, usually 
+                    - A recursiveDescentParser is a software component that takes input data, usually 
                     text, and builds a hierarchical data structure, giving a structural
                     representation of the input and also checking for correct syntax in 
                     the process (Wikipedia).
