@@ -39,9 +39,7 @@ img.resize {
 #button {
     margin-left: 10px;
 }
-#output {
-    margin-left: 80px;
-}
+
 .definition + p {
     margin-left: 80px;
     max-width: 65ch;
