@@ -52,7 +52,7 @@
 
 	<h2>Recursive Descent Parser</h2>
             <p>
-                bep
+                beep
                 Grammar for Arithmetic Expression
                 <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM
@@ -84,7 +84,7 @@
             </p>
 			<form id="inputForm" action="#">
                 <input type="text" name="name" id="input" />
-                <input type="button" name="submit" id="button" value="Submit" onclick="recursiveDescentRecognizer();" />
+                <input type="button" name="submit" value="Submit" onclick="recursiveDescentParser();" />
             </form>
             <br>
             <p id="output"></p>
@@ -95,7 +95,7 @@
             </p>
             <script>
 
-            function recursiveDescentRecognizer()
+            function recursiveDescentParser()
             {
                 var x = document.getElementById("input");
                 var input = x.value;
@@ -181,7 +181,7 @@
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "Errors found in the input stream: "+input+" ";
+                    "Errors found in the input stream "+input+" ";
                 exit();
             }
             function legalResponse()
@@ -189,7 +189,7 @@
                 var x = document.getElementById("input");
                 var input = x.value;
                 document.getElementById("output").innerHTML = 
-                    "The input stream: "+input+" is legal";
+                    "The input stream "+input+" is legal";
             }
             </script>
 
@@ -221,7 +221,7 @@
                     - Parsing, or syntax analysis, is a way of describing the structure of
                     a sentence through its grammatical derivation (Linz).
                     <br>
-                    - A recursiveDescentRecognizer is a software component that takes input data, usually 
+                    - A recursiveDescentParser is a software component that takes input data, usually 
                     text, and builds a hierarchical data structure, giving a structural
                     representation of the input and also checking for correct syntax in 
                     the process (Wikipedia).
