@@ -51,6 +51,7 @@
                 <h2>CSc 135</h2>
                 <div class="container">
 
+      <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
                 beep
@@ -62,7 +63,7 @@
                 <br>
                 FACTOR ::= ( EXP ) | DIGIT
                 <br>
-                DIGIT ::= 0 | 1 | 2|3
+                DIGIT ::= 0|1|2|3
                 <br><br>
 
                 Example of a valid set: 
@@ -73,12 +74,10 @@
                 Example of an invalid set: 
                 <br>
                 1+/2
-                <br><br>
+                <br>
                  
                 Input a valid arithmetic expression (like we learned in elementary)
-                containing only 0-3, the arithmetic operators +, -, *, /,  
-                and parentheses to surround valid expressions (, ) 
-                which can be joined by the operators. <br>
+                containing only 0-3, the arithmetic operators +, -, *, /,  and parentheses to surround valid expressions (, ) which can be joined by the operators. <br>
                 Terminate the input stream with a single dollar sign $.<br>
                 Clicking 'submit', will run the parser to check whether the
                 input is accepted by the grammar above. <br>
@@ -90,10 +89,17 @@
             <br>
             <p id="output"></p>
             <br>
-            <h2>Report</h2>
-            <br>
-            <p> ...
-            </p>
+            <h2>Report</h2><br>
+            <p> When I first attempted to create the Parser I began by writing it in Java. 
+            I figured that it would be simpler to implement and that I would be able to use the 
+            tools I already have. However I ran into an issue when I found that the html tag applet 
+            was depreciated and using the object tag was difficult for me to implement. When attempting 
+            to use the Applet of Object tag it would require java to be installed and ask the user to run 
+            the application. In Chrome it would not run because the java plugin was discontinued. To insure
+            compatibility across all systems I decided to rewrite the recursiveDescentParser in JavaScript. I found the w3 
+            school JavaScript and html tutorial very useful when it came to looking up how to implement 
+            specific commands. If I had one suggestion it would be to start early, since this is typically 
+            written in something different then many student have been learning. </p>
             <script>
 
             function recursiveDescentParser()
@@ -193,6 +199,8 @@
                     "The input stream "+input+" is legal";
             }
             </script>
+      </div>
+
     </div><!-- /.container -->
 
                 <h3 class="assignment">PL Assignment 1</h3>
