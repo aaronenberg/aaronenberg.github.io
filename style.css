@@ -40,6 +40,10 @@ img.resize {
     margin-left: 80px;
 
 }
+div.output {
+    margin-bottom: 10px;
+    position: relative
+}
 #button {
     margin-left: 10px;
 }
