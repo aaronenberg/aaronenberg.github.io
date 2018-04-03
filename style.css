@@ -42,7 +42,7 @@ img.resize {
 }
 div.output {
     margin-bottom: 10px;
-    position: relative
+    position: fixed;
 }
 #button {
     margin-left: 10px;
