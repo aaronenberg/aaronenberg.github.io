@@ -54,6 +54,7 @@
       <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
+                boop
                 Grammar for Arithmatic Expression <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM <br>
                 TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR <br>
@@ -170,13 +171,15 @@
             function error(){
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = "The input "+input+" is an invalid String";
+                document.getElementById("output").innerHTML = 
+                    "The input "+input+" is an invalid String";
                 exit();
             }
             function legal(){
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = "The input "+input+" is a valid String";
+                document.getElementById("output").innerHTML = 
+                    "The input "+input+" is a valid String";
             }
             </script>
       </div>
