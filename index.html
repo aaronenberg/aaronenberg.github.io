@@ -54,7 +54,7 @@
       <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
-                boop
+                beep
                 Grammar for Arithmatic Expression <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM <br>
                 TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR <br>
@@ -135,19 +135,18 @@
                     
                         token = match(")",token);
                 }
-                else if(token[0] == "0" || token[0] == "1" || token[0] == "2" || token[0] == "3"){
-                    if(token[0] =="0"){
-                        token = match("0",token);                    
-                    }
-                    else if(token[0] =="1"){
-                        token = match("1",token);                    
-                    }
-                    else if(token[0] =="2"){
-                        token = match("2",token);                    
-                    }
-                    else if(token[0] =="3"){
-                        token = match("3",token);                    
-                    }
+                else if(token[0] =="0"){
+                    token = match("0",token);                    
+                }
+                else if(token[0] =="1"){
+                    token = match("1",token);                    
+                }
+                else if(token[0] =="2"){
+                    token = match("2",token);                    
+                }
+                else if(token[0] =="3"){
+                    token = match("3",token);                    
+                }
                 }else{
                     throwInputError();
                 }
