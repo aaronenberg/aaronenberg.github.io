@@ -94,7 +94,8 @@
             function recursiveDescentParser()
             {
                 var x = document.getElementById("input");
-                var input = x.value.trim();
+                var input = x.value;
+                input = input.trim();
                 var token = input.split("");
                 expression(token);
                 if(token[1] != null || token[0] != "$"  ){
