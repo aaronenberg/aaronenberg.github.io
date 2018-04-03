@@ -33,6 +33,13 @@ img.resize {
     margin-left: 60px;
 }
 
+input {
+    margin-left: 80px;
+}
+
+#output {
+    margin-left: 80px;
+}
 .definition + p {
     margin-left: 80px;
     max-width: 65ch;
