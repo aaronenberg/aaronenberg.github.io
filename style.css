@@ -38,6 +38,7 @@ img.resize {
 }
 #output {
     margin-left: 80px;
+    position: fixed;
 }
 #button {
     margin-left: 10px;
