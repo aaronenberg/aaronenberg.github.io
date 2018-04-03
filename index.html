@@ -54,7 +54,6 @@
       <div class="jumbotron">
 	<h2>Recursive Descent Parser</h2>
             <p>
-            boop
                 Grammar for Arithmatic Expression <br>
                 EXP ::= EXP + TERM | EXP - TERM | TERM <br>
                 TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR <br>
@@ -65,7 +64,7 @@
                 3-2/(1+3)$ <br>
 
                 Example of an invalid set: <br>
-                1+/2$ <br>
+                1+/2<br>
                  
                 Enter string using the numbers 0 to 3, and the symbols +, -, *, /, (, and ). <br>
                 Your end of string variable will be dollar sign ($).<br>
@@ -74,7 +73,7 @@
 		<h2>Input</h2>
 			<form id="inputForm" action="#">
                 Input: <input type="text" name="name" id="input" />
-                <input type="button" name="submit" value="Submit" onclick="recursiveDescentParser();" />
+                <input type="button" name="submit" value="Submit" onclick="parser();" />
             </form>
             <br>
             <p id="output"></p>
@@ -86,105 +85,98 @@
             was depreciated and using the object tag was difficult for me to implement. When attempting 
             to use the Applet of Object tag it would require java to be installed and ask the user to run 
             the application. In Chrome it would not run because the java plugin was discontinued. To insure
-            compatibility across all systems I decided to rewrite the recursiveDescentParser in JavaScript. I found the w3 
+            compatibility across all systems I decided to rewrite the parser in JavaScript. I found the w3 
             school JavaScript and html tutorial very useful when it came to looking up how to implement 
             specific commands. If I had one suggestion it would be to start early, since this is typically 
             written in something different then many student have been learning. </p>
             <script>
 
-            function recursiveDescentParser()
-            {
+ function parser(){
                 var x = document.getElementById("input");
                 var input = x.value;
                 input = input.trim();
                 var token = input.split("");
-                expression(token);
+                parseE(token);
                 if(token[1] != null || token[0] != "$"  ){
-                    throwInputError();
+                    error();
                 }
             }
-            function expression(token)
-            {
-                term(token);
-                while(token[0] == "+" || token[0] == "-") {
-                    if(token[0] == "+") {
+            function parseE(token){
+                parseT(token);
+                while(token[0] == "+" || token[0] == "-"){
+                    if(token[0] == "+"){
                         token = match("+",token)
-                        term(token);
+                        parseT(token);
                     }
-                    if(token[0] =="-") {
+                    if(token[0] =="-"){
                         token = match("-",token)
-                        term(token);
+                        parseT(token);
                     }
                 }
             }
-            function term(token)
-            {
-                factor(token);
-                while(token[0] == "*" || token[0] == "/") {
-                    if(token[0] =="*") {
+            function parseT(token){
+                parseF(token);
+                while(token[0] == "*" || token[0] == "/"){
+                    if(token[0] =="*"){
                         token = match("*",token)
-                        factor(token);
+                        parseF(token);
                     }
-                    if(token[0] =="/") {
+                    if(token[0] =="/"){
                         token = match("/",token)
-                        factor(token);
+                        parseF(token);
                     }
                 }
             }
-            function factor(token)
-            {
-                if(token[0] == "(") {
-                    token = match("(", token);
-                    expression(token);
-                    token = match(")", token);
+            function parseF(token){
+                if(token[0] =="("){
+                    token = match("(",token);
+                    parseE(token);
+                    
+                        token = match(")",token);
                 }
-                else if(token[0] == "0") {
-                    token = match("0", token);                    
-                }
-                else if(token[0] == "1") {
-                    token = match("1", token);                    
-                }
-                else if(token[0] == "2") {
-                    token = match("2", token);                    
-                }
-                else if(token[0] == "3") {
-                    token = match("3", token);                    
-                }
-                else {
-                    throwInputError();
+                else if(token[0] == "0" || token[0] == "1" || token[0] == "2" || token[0] == "3"){
+                    if(token[0] =="0"){
+                        token = match("0",token);                    
+                    }
+                    else if(token[0] =="1"){
+                        token = match("1",token);                    
+                    }
+                    else if(token[0] =="2"){
+                        token = match("2",token);                    
+                    }
+                    else if(token[0] =="3"){
+                        token = match("3",token);                    
+                    }
+                }else{
+                    error();
                 }
                     
             }
             
-            function match(x,token)
-            {
-                if(token[0] == x) {
-                    return getNextToken(token);
-                }
-                else {
-                    throwInputError();
+            function match(x,token){
+                if(token[0] == x){
+                    return nextToken(token);
+                }else{
+                    error();
                 }
             }
-            function getNextToken(token) 
-            {
+            function nextToken(token){
                 token.shift();
-                if(token[0] == "$") {
+                if(token[0] == "$"){
                     legal();
                 }
                 return token;
             }
-            function throwInputError() 
-            {
+            function error(){
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = "Errors found in the input stream "+input+";
+                document.getElementById("output").innerHTML = "The input "+input+" is an invalid String";
                 exit();
             }
-            function legal() 
-            {
+            function legal(){
                 var x = document.getElementById("input");
                 var input = x.value;
-                document.getElementById("output").innerHTML = "The input stream "+input+" is legal.";
+                document.getElementById("output").innerHTML = "The input "+input+" is a valid String";
             }
             </script>
       </div>
@@ -219,7 +211,7 @@
                     - Parsing, or syntax analysis, is a way of describing the structure of
                     a sentence through its grammatical derivation (Linz).
                     <br>
-                    - A recursiveDescentParser is a software component that takes input data, usually 
+                    - A parser is a software component that takes input data, usually 
                     text, and builds a hierarchical data structure, giving a structural
                     representation of the input and also checking for correct syntax in 
                     the process (Wikipedia).
