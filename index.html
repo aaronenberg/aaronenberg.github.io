@@ -180,7 +180,8 @@
             function errorResponse()
             {
                 var x = document.getElementById("input");
-                var input = x.value;
+		var str = x.value;
+                var input = str.slice(0, -1);
                 document.getElementById("output").innerHTML = 
                     "Errors found in the input stream: '"+input+"' ";
                 exit();
