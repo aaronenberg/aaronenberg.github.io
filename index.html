@@ -49,6 +49,38 @@
             <br>
             <div class="csc">
                 <h2>CSc 135</h2>
+                
+                <h3 class="assignment">PL Assignment 3</h3>
+                <h5>Prolog Exam Problem Contribution</h5>
+                <p>
+                    FACTS
+                    <br>
+                    toyota(camry).
+                    <br>
+                    toyota(tacoma).
+                    <br>
+                    honda(civic).
+                    <br>
+                    ford(f150).
+                    <br>
+                    ford(mustang).
+                    <br><br>
+
+                    RULES
+                    <br>
+                    japanese(X):- toyota(X).
+                    <br>
+                    japanese(X):- honda(X).
+                    <br>
+                    american(X):- ford(X).
+                    <br><br>
+
+                    QUERIES
+                    ?-japanese(X), honda(X).
+                    <br>
+                    ?-american(X).
+                    <br>
+                </p>
 
                 <h3 class="assignment">PL Assignment 4</h3>
 	            <h5>Recursive Descent Recognizer</h5>
