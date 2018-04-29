@@ -89,7 +89,7 @@
                     illegalDriver(X):-
                                 drives(X, _), 
                                 license(X, suspended); 
-                
+                    <br>&emsp;&emsp; 
                                 drives(X, _), 
                                 \+ insurance(X). 
                     <br><br>
@@ -107,6 +107,7 @@
                     ?-legalDriver(X), drives(X, prius).
                     <br><br>
                     Who is a nonDriver?
+                    <br>
                     ?-nonDriver(X).
                     <br><br>
 
