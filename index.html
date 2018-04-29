@@ -55,32 +55,71 @@
                 <p>
                     FACTS
                     <br>
-                    toyota(camry).
+                    drives(bob, camry).
                     <br>
-                    toyota(tacoma).
+                    drives(pam, prius).
                     <br>
-                    honda(civic).
+                    drives(jim, tacoma).
                     <br>
-                    ford(f150).
+                    drives(larry, mustang).
                     <br>
-                    ford(mustang).
+                    license(pam, ok).
+                    <br>
+                    license(bob, ok).
+                    <br>
+                    license(jim, suspended).
+                    <br>
+                    license(larry, revoked).
+                    <br>
+                    insurance(bob).
+                    <br>
+                    insurance(jim).
+                    <br>
+                    insurance(pam).
                     <br><br>
 
                     RULES
                     <br>
-                    japanese(X):- toyota(X).
-                    <br>
-                    japanese(X):- honda(X).
-                    <br>
-                    american(X):- ford(X).
+                    legalDriver(X):- 
+                                drives(X, _), 
+                                license(X, ok), 
+                                insurance(X).
                     <br><br>
 
-                    QUERIES
+                    illegalDriver(X):-
+                                drives(X, _), 
+                                license(X, suspended); 
+                
+                                drives(X, _), 
+                                \+ insurance(X). 
+                    <br><br>
+
+                    nonDriver(X):- 
+                                license(X, revoked); 
+                
+                                \+ drives(X, _).
+                    <br><br>
+
+                    GOALS
                     <br>
-                    ?-japanese(X), honda(X).
+                    Who is a legal driver and drives a prius?
                     <br>
-                    ?-american(X).
+                    ?-legalDriver(X), drives(X, prius).
+                    <br><br>
+                    Who is a nonDriver?
+                    ?-nonDriver(X).
+                    <br><br>
+
+                    QUERY RUNS
                     <br>
+                    <img src="./assets/prolog_run.png">
+                    <br><br>
+    
+                    DEDUCTION TREE
+                    <br>
+                    <img src="./assets/tree-deduction-final.png">
+                    <br><br>
+
                 </p>
 
                 <h3 class="assignment">PL Assignment 4</h3>
