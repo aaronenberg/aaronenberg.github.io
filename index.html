@@ -50,78 +50,6 @@
             <div class="csc">
                 <h2>CSc 135</h2>
                 
-                <h3 class="assignment">PL Assignment 3</h3>
-                <h5>Prolog Exam Problem Contribution</h5>
-                <p>
-                    FACTS
-                    <br>
-                    drives(bob, camry).
-                    <br>
-                    drives(pam, prius).
-                    <br>
-                    drives(jim, tacoma).
-                    <br>
-                    license(pam, ok).
-                    <br>
-                    license(bob, ok).
-                    <br>
-                    license(jim, suspended).
-                    <br>
-                    license(larry, revoked).
-                    <br>
-                    insurance(bob).
-                    <br>
-                    insurance(jim).
-                    <br>
-                    insurance(pam).
-                    <br><br>
-
-                    RULES
-                    <br>
-                    legalDriver(X):- 
-                                drives(X, _), 
-                                license(X, ok), 
-                                insurance(X).
-                    <br><br>
-
-                    illegalDriver(X):-
-                                drives(X, _), 
-                                license(X, suspended); 
-                    <br>&emsp;&emsp;&emsp;&emsp;&emsp; 
-                    &emsp;&emsp;&emsp;&nbsp;
-                                drives(X, _), 
-                                \+ insurance(X). 
-                    <br><br>
-
-                    nonDriver(X):- 
-                                license(X, revoked); 
-                
-                                \+ drives(X, _).
-                    <br><br>
-
-                    GOALS
-                    <br>
-                    Who is a legal driver and drives a prius?
-                    <br>
-                    ?-legalDriver(X), drives(X, prius).
-                    <br><br>
-                    Who is a nonDriver?
-                    <br>
-                    ?-nonDriver(X).
-                    <br><br>
-
-                    QUERY RUNS
-                    <br>
-                    <img src="./assets/prolog_run.png">
-                    <br><br>
-    
-                    DEDUCTION TREE
-                    <br><br>
-                    <img src="./assets/tree-deduction-final.png">
-                    <br><br>
-
-                </p>
-
                 <h3 class="assignment">PL Assignment 4</h3>
 	            <h5>Recursive Descent Recognizer</h5>
             <p>
@@ -146,13 +74,13 @@
                 1+/2
                 <br><br>
                  
-                Input a valid arithmetic expression (like we learned in elementary)
-                containing only 0-3, the arithmetic operators +, -, *, /,  
-                and parentheses to surround valid expressions (, ) 
-                which can be joined by the operators. <br>
-                Terminate the input stream with a single dollar sign $.<br>
-                Clicking 'submit', will run the parser to check whether the
-                input is accepted by the grammar above. <br>
+                Enter a valid arithmetic expression with combinations of: <br>
+                - integers '0', '1', '2', '3',  <br>
+                - arithmetic operators '+', '-', '*', '/',  <br>  
+                - parentheses to surround valid expressions '(', ')'  <br> 
+                Terminate the input stream with a dollar sign '$'.<br>
+                Click 'Recognize' to parse the input expression and check if it
+                is accepted by the grammar above. <br>
             </p>
 			<form id="inputForm" action="#">
                 <input type="text" name="name" id="input" />
@@ -267,6 +195,78 @@
                     "TEST PASSED : '"+input+"' is legal";
             }
             </script>
+
+                <h3 class="assignment">PL Assignment 3</h3>
+                <h5>Prolog Exam Problem Contribution</h5>
+                <p>
+                    FACTS
+                    <br>
+                    drives(bob, camry).
+                    <br>
+                    drives(pam, prius).
+                    <br>
+                    drives(jim, tacoma).
+                    <br>
+                    license(pam, ok).
+                    <br>
+                    license(bob, ok).
+                    <br>
+                    license(jim, suspended).
+                    <br>
+                    license(larry, revoked).
+                    <br>
+                    insurance(bob).
+                    <br>
+                    insurance(jim).
+                    <br>
+                    insurance(pam).
+                    <br><br>
+
+                    RULES
+                    <br>
+                    legalDriver(X):- 
+                                drives(X, _), 
+                                license(X, ok), 
+                                insurance(X).
+                    <br><br>
+
+                    illegalDriver(X):-
+                                drives(X, _), 
+                                license(X, suspended); 
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp; 
+                    &emsp;&emsp;&emsp;&nbsp;
+                                drives(X, _), 
+                                \+ insurance(X). 
+                    <br><br>
+
+                    nonDriver(X):- 
+                                license(X, revoked); 
+                
+                                \+ drives(X, _).
+                    <br><br>
+
+                    GOALS
+                    <br>
+                    Who is a legal driver and drives a prius?
+                    <br>
+                    ?-legalDriver(X), drives(X, prius).
+                    <br><br>
+                    Who is a nonDriver?
+                    <br>
+                    ?-nonDriver(X).
+                    <br><br>
+
+                    QUERY RUNS
+                    <br>
+                    <img src="./assets/prolog_run.png">
+                    <br><br>
+    
+                    DEDUCTION TREE
+                    <br><br>
+                    <img src="./assets/tree-deduction-final.png">
+                    <br><br>
+
+                </p>
 
                 <h3 class="assignment">PL Assignment 1</h3>
                 <h5 class="definition"> (a) Syntax</h5>
