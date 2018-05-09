@@ -57,6 +57,7 @@ div.output {
 }
 .sources ul {
     margin-left: 40px;
+    max-width: 75ch;
 }
 
 div.sources {
